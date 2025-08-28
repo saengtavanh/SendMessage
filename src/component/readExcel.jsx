@@ -1112,7 +1112,7 @@ const MessageList = ({ onToggleMessageList, onEditMessage,headers,data,SpinnerCo
           completedTasks = 100;
         }
         setProgress(completedTasks);
-        let data = await axios.post("http://localhost:5000/send-sms", {
+        let data = await axios.post("http://192.168.1.199:5000/send-sms", {
           recipient: `+85620${dataItem}`,
           text: sendMessage
         });
@@ -1403,7 +1403,7 @@ const TemplateList = ({ onToggleTemplateList,onEditTemplate,headers,data,Spinner
           completedTasks = 100;
         }
         setProgress(completedTasks);
-      let data = await axios.post("http://localhost:5000/send-sms", {
+      let data = await axios.post("http://192.168.1.199:5000/send-sms", {
         recipient: `+85620${dataItem}`,
         text: template
       });
