@@ -1116,6 +1116,7 @@ const MessageList = ({ onToggleMessageList, onEditMessage,headers,data,SpinnerCo
           recipient: `+85620${dataItem}`,
           text: sendMessage
         });
+        console.log(data);
         if (selectedRadioOption === 'selectSend') {
           if (data.data.comment !== "Message sent") {
             if (data.data.comment === 'Invalid Destination WhatsApp number') {

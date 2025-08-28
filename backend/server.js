@@ -9,12 +9,13 @@ app.use(express.json());
 app.post("/send-sms", async (req, res) => {
     try {
         const { recipient, text } = req.body;
-        const response = await axios.post(`https://api.textmebot.com/send.php?recipient=${recipient}&apikey=ahLZYn4bFppP&text=${text}`, {
-            headers: {
-                "Accept": "application/json", 
-                "Content-Type": "application/json"
-            }});
-        res.json(response.data);
+        // const response = await axios.post(`https://api.textmebot.com/send.php?recipient=${recipient}&apikey=ahLZYn4bFppP&text=${text}`, {
+        //     headers: {
+        //         "Accept": "application/json", 
+        //         "Content-Type": "application/json"
+        //     }});
+        // res.json(response.data);
+        res.json({ message: "SMS sent successfully (mock response)" });
     } catch (error) {
         res.status(500).json({ error: "Failed to send message" });
     }
