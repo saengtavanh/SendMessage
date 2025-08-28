@@ -11,9 +11,10 @@ app.post("/send-sms", async (req, res) => {
         const { recipient, text } = req.body;
         const response = await axios.post(`https://api.textmebot.com/send.php?recipient=${recipient}&apikey=ZY5od66WeEF1&text=${text}`, {
             headers: {
-                "Accept": "application/json", 
+                "Accept": "application/json",
                 "Content-Type": "application/json"
-            }});
+            }
+        });
         res.json(response.data);
     } catch (error) {
         res.status(500).json({ error: "Failed to send message" });
